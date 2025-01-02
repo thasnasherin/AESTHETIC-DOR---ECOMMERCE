@@ -1,0 +1,44 @@
+{% extends 'userindex.html' %}
+{% block body %}
+<center>
+  <center><h3><u>OUR AESTHETIC CATEGORIES</u></h3></center>
+  <section id="team" class="team section">
+
+    
+            
+    <div class="row">
+      {% for i in cat %}
+      <div class="col-6">
+        
+    
+    
+    <!-- <div class="swiper-slide"></div> -->
+      <div class="team container">
+        <div class="pic">
+          <img src="{{i.cimage.url}}" style="height: 500px;width: 500px;" alt="Image" class="img-fluid">
+        </div>
+        <h3 clas="">
+          <a href="#"><span class="text-danger">{{i.cname}}</span> </a>
+        </h3>
+        <b><p style="font-size:x-small;font-family: Georgia, 'Times New Roman', Times, serif;">
+          {{i.cdesc}}
+        </p></b>
+        <p class="mb-0">
+          <a href="{% url 'viewproducts' cat=i.cname %}" class="more dark bg-danger">VIEW PRODUCTS <span class="bi bi-arrow-right-short"></span></a>
+        </p><br>
+      </div>
+
+
+
+      </div>
+      {% endfor %}
+
+    </div>
+</div>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+</div>
+<!-- /.container -->
+</div>
+</section>
+</center>
+{% endblock %}

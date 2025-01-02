@@ -1,0 +1,39 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">AESTHETIC CATEGORIES</h4>
+        <p class="card-description"> Add Aesthetic Categories </p>
+        {% for i in data %}
+        <form class="forms-sample" action="{% url 'updatecat' id=i.id %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputName1">Category Name</label>
+            <input type="text" value="{{i.cname}}" name="cname" class="form-control" id="exampleInputName1" placeholder="Category Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Category Description</label>
+            <input type="text" value="{{i.cdesc}}" name="cdesc" class="form-control" id="exampleInputEmail3" placeholder="Category Description">
+          </div>
+          
+          <div class="form-group">
+            <label>Category Image</label>
+           
+            <div class="input-group col-xs-12">
+              <input type="file" name="cimage" class="form-control file-upload-info" placeholder="Upload Category Image">
+             
+              <span class="input-group-append">
+                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+              </span>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary mr-2">Add</button>
+          <button class="btn btn-light">Cancel</button>
+        </form>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

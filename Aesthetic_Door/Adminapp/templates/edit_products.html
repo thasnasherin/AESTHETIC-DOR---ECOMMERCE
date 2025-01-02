@@ -1,0 +1,51 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">AESTHETIC PRODUCTS</h4>
+        <p class="card-description"> Add Aesthetic Products </p>
+     {% for i in data %}
+        <form class="forms-sample" action="{% url 'updatepro' id=i.id %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputName1">Product Name</label>
+            <input type="text" value="{{i.pname}}" name="pname" class="form-control" id="exampleInputName1" placeholder="Category Name">
+          </div>
+          <div class="form-group">
+          <select name="pcat" id="">
+            {% for i in cat %}
+            <option>{{i.cname}}</option>
+            {% endfor %}
+          </select>
+            <label for="exampleInputEmail3"> Product Category </label>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3"> Product Price </label>
+            <input type="text" value="{{i.pprice}}" name="pprice" class="form-control" id="exampleInputEmail3" placeholder="Category Description">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3"> Product Stock </label>
+            <input type="text" value="{{i.pstock}}" name="pstock" class="form-control" id="exampleInputEmail3" placeholder="Category Description">
+          </div>
+          
+          <div class="form-group">
+            <label>Product Image</label>
+           
+            <div class="input-group col-xs-12">
+              <input type="file" name="pimage" class="form-control file-upload-info" placeholder="Upload Category Image">
+             
+              <span class="input-group-append">
+                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+              </span>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary mr-2">Add</button>
+          <button class="btn btn-light">Cancel</button>
+        </form>
+     {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

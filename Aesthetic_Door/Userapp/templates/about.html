@@ -1,0 +1,249 @@
+{% extends 'userindex.html' %}
+{% load static %}
+{% block body %}
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>About</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">About</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- About 2 Section -->
+    <section id="about-2" class="about-2 section">
+
+      <div class="container">
+        <div class="content">
+          <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 order-lg-2 offset-xl-1 mb-4">
+              <div class="img-wrap text-center text-md-left aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="img">
+                  <img src="{% static 'assets/img/BANNER4.jpeg' %}" alt="circle image" class="img-fluid">
+                </div>
+              </div>
+            </div>
+
+            <div class="offset-md-0 offset-lg-1 col-sm-12 col-md-5 col-lg-5 col-xl-4 aos-init aos-animate" data-aos="fade-up">
+              <div class="px-3">
+                <span class="content-subtitle">Our Mission</span>
+                <h2 class="content-title text-start">
+                  Welcome to Aesthetic Door, your gateway to a world of elegant and carefully curated aesthetic products. 
+                </h2>
+                <p class="lead">
+                  We are passionate about bringing beauty, functionality, and inspiration into your everyday life.
+
+At Aesthetic Door, we believe that the objects you surround yourself with should not only serve a purpose but also bring joy and elevate your environment. 
+                </p>
+                <p class="mb-5">
+                  Whether you’re looking for stylish home decor, unique accessories, or thoughtful gifts, our collection is designed to cater to every taste and style.
+
+                  Our platform connects buyers and sellers who share a love for aesthetics, providing a seamless and secure shopping experience. From handcrafted treasures to modern designs, we bring together creators and enthusiasts to celebrate the art of living beautifully.
+                  
+                  Join us on this journey to discover pieces that inspire creativity, spark joy, and turn ordinary moments into extraordinary experiences.
+                  
+                  Step through Aesthetic Door and transform the way you shop for the things you love
+                </p>
+                <p>
+                  <a href="#" class="btn-get-started">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About 2 Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-3">
+            <div class="services-item aos-init aos-animate" data-aos="fade-up">
+              <div class="services-icon">
+                <i class="bi bi-bullseye"></i>
+              </div>
+              <div>
+                <h3>Technology</h3>
+                <p>Separated they live in Bookmarksgrove right at the coast</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="services-item aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+              <div class="services-icon">
+                <i class="bi bi-command"></i>
+              </div>
+              <div>
+                <h3>Web Design</h3>
+                <p>Separated they live in Bookmarksgrove right at the coast</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="services-item aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+              <div class="services-icon">
+                <i class="bi bi-bar-chart"></i>
+              </div>
+              <div>
+                <h3>Branding</h3>
+                <p>Separated they live in Bookmarksgrove right at the coast</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container">
+
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-5">
+            <div class="images-overlap">
+              <img src="{% static 'assets/img/BANNER5.jpeg' %}" alt="student" class="img-fluid img-1 aos-init aos-animate" data-aos="fade-up">
+            </div>
+          </div>
+
+          <div class="col-lg-4 ps-lg-5">
+            <span class="content-subtitle">Why Us</span>
+            <h2 class="content-title">At Aesthetic Door, </h2>
+           <br><br><br><br><br>
+
+            <p class="mb-5">
+              <b>we go beyond being just a marketplace—we’re a community dedicated to enhancing the way you experience beauty and design. Here's why we're the perfect choice for your aesthetic product needs:</b>
+            </p>
+            <div class="row mb-5 count-numbers">
+
+
+              <!-- Start Stats Item -->
+             
+              <!-- End Stats Item -->
+
+            </div>
+          </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- /Stats Section -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <div class="site-section slider-team-wrap">
+        <div class="container">
+
+          <div class="slider-nav d-flex justify-content-end mb-3">
+            <a href="#" class="js-prev js-custom-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-8f2ec1e6060d03a2"><i class="bi bi-arrow-left-short"></i></a>
+            <a href="#" class="js-next js-custom-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-8f2ec1e6060d03a2"><i class="bi bi-arrow-right-short"></i></a>
+          </div>
+
+          <div class="swiper init-swiper aos-init swiper-initialized swiper-horizontal swiper-backface-hidden aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "1",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                },
+                "navigation": {
+                  "nextEl": ".js-custom-next",
+                  "prevEl": ".js-custom-prev"
+                },
+                "breakpoints": {
+                  "640": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 30
+                  },
+                  "768": {
+                    "slidesPerView": 3,
+                    "spaceBetween": 30
+                  },
+                  "1200": {
+                    "slidesPerView": 3,
+                    "spaceBetween": 30
+                  }
+                }
+              }
+            </script>
+              
+              
+              
+               
+              </div>
+            
+                <div class="team">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <span class="content-subtitle">What We can Provides to You</span>
+                      <h2 class="content-title">At Aesthetic Door, </h2>
+                     <br><br><br><br><br>
+          
+                      <p class="mb-2">
+                        <b>
+                          Curated Collection
+      We handpick every item to ensure it meets our high standards of quality, style, and functionality. Whether you’re a buyer seeking unique pieces or a seller showcasing your creations, our platform values artistry and design.
+      
+      Seamless Shopping Experience
+      Our user-friendly interface and secure payment options make shopping and selling hassle-free. From browsing to checkout, we’ve designed our process with your convenience in mind.
+      
+      Diverse Aesthetic Styles
+      Whether your style is minimalist, bohemian, modern, or vintage, we have something for everyone. Our diverse range ensures you find products that resonate with your personal taste.
+      
+      Support for Creators
+      By shopping with us, you support independent artists, small businesses, and creative minds who pour their passion into every product they offer.
+      
+      Customer-Centric Approach
+      Your satisfaction is our priority. We are committed to providing top-notch customer service, fast shipping, and an enjoyable shopping journey every step of the way.
+      
+      Sustainable and Ethical Options
+      We promote sustainability by featuring eco-friendly and ethically sourced products, helping you make choices that are kind to the planet.
+                        </b>
+                      </p>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="pic">
+                        <img src="{% static 'assets/img/BANNER7.jpeg' %}"   alt="Image" class="img-fluid">
+                      </div>
+                    </div>
+                   
+                    </div>
+                  </div>
+                 
+              </div>
+            
+       
+    
+
+                <div class="row mb-5 count-numbers">
+    
+                  <!-- Start Stats Item -->
+                 
+                  <!-- End Stats Item -->
+    
+                </div>
+              <!-- <div class="swiper-slide"></div> -->
+         
+
+  </main>
+  {% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<div style="margin-right: 40px;" class="col-lg-6 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Aesthetic Category Details</h4>
+        </p>
+        <table style="margin-right: 20px;" class="table table-bordered">
+          <thead>
+            <tr>
+              
+              <b><th> PRODUCT IMAGE </th></b>
+              <th><b> PRODUCT NAME </b></th>
+              <th><b> PRODUCT CATEGORY</b> </th>
+              <th><b> PRODUCT PRICE </b></th>
+              <th><b> PRODUCT STOCK</b>  </th>
+              
+              <th>EDIT</th>
+              <th>DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in pro %}
+            <tr class="table-info">
+              <td><img src="{{i.pimage.url}}" alt="">  </td>
+            
+              <td> {{i.pname}} </td>
+              <td> {{i.pcat}} </td>
+              <td> {{i.pprice}} </td>
+              <td> {{i.pstock}} </td>
+              <td><a href="{% url 'edit_products' id=i.id %}"><label class="badge badge-success">EDIT</label></a></td>
+              <td><a href="{% url 'delete_products' id=i.id %}"><label class="badge badge-danger">DELETE</label></a></td>
+
+            </tr>
+            {% endfor %}
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'userindex.html' %}
+{% block body %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">PRODUCTS</th>
+        <th scope="col">NAME</th>
+        <th scope="col">PRICE</th>
+        <th scope="col">QUANTITY</th>
+        <th scope="col">TOTAL</th>
+        <th scope="col">HANDLE</th>
+
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in data %}
+      <tr>
+        <th scope="row"><img style="height: 50px;width: 50px;" src="{{i.productid.pimage.url}}" alt=""></th>
+        <td>{{i.productid.pname}}</td>
+        <td>{{i.productid.pprice}}</td>
+        <td>{{i.quantity}}</td>
+        <td>{{i.total}}</td>
+        <td><a href="{% url 'cartdelete' id=i.id %}"><button class="btn-close bg-danger"></button></a></td>
+      </tr>
+      {% endfor %}
+      
+
+    </tbody>
+  </table>
+  <center>             <a href="{% url 'checkout' %}"><button  class="btn btn-success mr-5">Place Order</button></a></center>
+<br>
+{% endblock %}

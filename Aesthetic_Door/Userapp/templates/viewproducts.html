@@ -1,0 +1,42 @@
+{% extends 'userindex.html' %}
+{% block body %}
+<center>
+  <center><h3><u>OUR AESTHETIC PRODUCTS</u></h3></center>
+  <section id="team" class="team section">
+
+    
+            
+    <div class="row">
+      {% for i in pro %}
+      <div class="col-6">
+        
+    
+    
+    <!-- <div class="swiper-slide"></div> -->
+      <div class="team container">
+        <div class="pic">
+          <img src="{{i.pimage.url}}" style="height: 500px;width: 500px;" alt="Image" class="img-fluid">
+        </div>
+        <h3 clas="">
+          <a href="#"><span class="text-danger">{{i.pname}}</span> </a>
+        </h3>
+        
+        <p class="mb-0">
+          <a href="{% url 'viewmoreproducts' id=i.id %}" class="more dark bg-danger">VIEW MORE DETAILS <span class="bi bi-arrow-right-short"></span></a>
+        </p><br>
+      </div>
+
+
+
+      </div>
+      {% endfor %}
+
+    </div>
+</div>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+</div>
+<!-- /.container -->
+</div>
+</section>
+</center>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<div style="margin-right: 40px;" class="col-lg-6 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Aesthetic Category Details</h4>
+        </p>
+        <table style="margin-right: 20px;" class="table table-bordered">
+          <thead>
+            <tr>
+              
+              <th> CATEGORY IMAGE </th>
+              <th> CATEGORY NAME </th>
+              <th> CATEGORY DESCRIPTION </th>
+              <th>EDIT</th>
+              <th>DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in cat %}
+            <tr class="table-info">
+              <td><img src="{{i.cimage.url}}" alt="">  </td>
+             
+              <td> {{i.cname}} </td>
+              <td> {{i.cdesc}} </td>
+              <td><a href="{% url 'edit_category' id=i.id %}"><label class="badge badge-success">EDIT</label></a></td>
+              <td><a href="{% url 'delete_category' id=i.id %}"><label class="badge badge-danger">DELETE</label></a></td>
+
+            </tr>
+            {% endfor %}
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

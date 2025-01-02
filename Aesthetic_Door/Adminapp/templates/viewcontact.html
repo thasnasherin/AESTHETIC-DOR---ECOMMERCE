@@ -1,0 +1,37 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<div style="margin-right: 40px;" class="col-lg-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">User's Feedbacks</h4>
+        </p>
+        <table style="margin-right: 20px;" class="table table-bordered">
+          <thead>
+            <tr>
+              
+              <b><th> USER'S NAME </th></b>
+              <th><b> USER'S EMAIL </b></th>
+              <th><b> USER'S MESSAGE</b> </th>
+             
+              
+             
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in data %}
+            <tr class="table-info">
+             
+              <td> {{i.name}} </td>
+              <td> {{i.email}} </td>
+              <td> {{i.message}} </td>
+             
+
+            </tr>
+            {% endfor %}
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends 'userindex.html' %}
+{% block body %}
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>Product Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Portfolio Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="portfolio-details-slider swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+
+            
+
+            {% for i in pro %}
+<div class="row">
+ <div class="row">
+  <div class="col-md-6">
+    <div class="" data-aos="fade-up" data-aos-delay="100" >
+      <div class="portfolio-info">
+        <h3>Product information</h3><br><br><br><br><br><br><br><br><br><br><br>
+        <form action="{% url 'cartdata' id=i.id %}" method="post">
+        {% csrf_token %}
+        <ul>
+          <li><h4><b>Product</b> <div style="color: red;">{{i.pname}}</div></h4></li>
+          <li><b>Category</b> {{i.pcat}}</li>
+          <li><b>Product Price</b> {{i.pprice}}</li>
+          <li><b>Product Stock</b> {{i.pstock}}</li>
+          <div class="col-12">
+            <input type="number" name="quantity" id="quantity" value="1" min="1" max="100">
+            <input type="hidden" name="price" id="price" value="{{i.pprice}}">
+            <input type="number" name="total" id="total" value="{{i.pprice}}">
+          </div><br>
+          <li><button  type="submit" class="btn-visit align-self-start">Add to Cart</button></li>
+        </ul>
+      </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="" role="group" aria-label="4 / 4" data-swiper-slide-index="3">
+      <img src="{{i.pimage.url}}" width="1000" height="1000" alt="">
+    </div>
+
+  </div>
+
+ </div>
+</div>
+
+
+            
+
+           
+         
+        <div class="row justify-content-between gy-4 mt-4" style="margin-left: 650px;" >
+
+          <div class="col-lg-8 aos-init aos-animate" data-aos="fade-up">
+            <div class="portfolio-description">
+              <h2>{{i.pname}}</h2>
+              <p>
+                {{i.pprice}} rs
+              </p>
+              {% if i.pstock < 6  %}
+              <p style="color: red;">
+                Hurryy...only few stocks are remaining.....!!!
+              </p>
+              {% endif %}
+
+            
+
+              
+
+            </div>
+          </div>
+
+         
+
+        </div>
+        {% endfor %}
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            $('#quantity').on('change', function(){
+                var quantity=$('#quantity').val();
+                var price=$('#price').val();
+                var total=parseInt(quantity)*parseInt(price);
+                $('#total').val(total);
+            })
+        })
+    </script>
+{% endblock %}
