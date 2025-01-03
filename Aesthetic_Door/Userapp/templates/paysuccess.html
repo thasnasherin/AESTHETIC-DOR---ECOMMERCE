@@ -2,7 +2,17 @@
 
 {% extends 'userindex.html' %}
 {% block body %}
-
+<div class="page-title light-background">
+    <div class="container">
+      <h1>Cart</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{% url 'userindex' %}">Home</a></li>
+          <li class="current">Pay Success</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
     <center>
         <h1 style="color: rgb(36, 93, 36);">PAYMENT IS SUCCESSFUL</h1>
         <P>PAYMENT ID:{{payment.id}}</P>

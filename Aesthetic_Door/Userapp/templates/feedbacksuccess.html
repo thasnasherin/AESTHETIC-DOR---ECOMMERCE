@@ -1,14 +1,12 @@
-
-
 {% extends 'userindex.html' %}
 {% block body %}
 <div class="page-title light-background">
     <div class="container">
-      <h1>Payment</h1>
+      <h1>Contact</h1>
       <nav class="breadcrumbs">
         <ol>
-          <li><a href="{% url 'userindex' %}">Home</a></li>
-          <li class="current">Payment</li>
+            <li><a href="{% url 'userindex' %}">Home</a></li>
+          <li class="current">Contact Status</li>
         </ol>
       </nav>
     </div>
@@ -20,16 +18,7 @@
       <div class="row gy-5 gx-lg-5">
 
         <div class="col-lg-12">
-          <form action="{% url 'create_payment' %}" method="post" role="form" class="">
-            {% csrf_token %}
-			{% if 'u_id' in request.session %}
-            
-          
-
-            <center><button type="submit" class="btn btn-success mr-2">Pay Now</button></center>
-            {% endif %}
-          </form>
-          
+          <h3 style="text-align: center;">Your Feedback is successfully sended.....</h3>
         </div><!-- End Contact Form -->
 
       </div>

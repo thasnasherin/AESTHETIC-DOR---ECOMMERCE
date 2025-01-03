@@ -1,5 +1,6 @@
 {% extends 'userindex.html' %}
 {% block body %}
+
 <main class="main">
 
     <!-- Page Title -->
@@ -8,8 +9,8 @@
         <h1>Product Details</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
+            <li><a href="{% url 'userindex' %}">Home</a></li>
+            <li class="current">Product Details</li>
           </ol>
         </nav>
       </div>

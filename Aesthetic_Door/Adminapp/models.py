@@ -12,3 +12,4 @@ class Product(models.Model):
     pprice=models.IntegerField()
     pstock=models.IntegerField()
     pimage=models.ImageField(upload_to='pimages')
+    status=models.IntegerField(default=0)

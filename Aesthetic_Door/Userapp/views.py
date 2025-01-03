@@ -20,6 +20,18 @@ def viewproducts(request,cat):
         pro=Product.objects.filter(pcat=cat)
     return render(request,'viewproducts.html',{'pro':pro})
 
+def wishlist(request):
+    pro=Product.objects.filter(status=1)
+    return render(request,'wishlist.html',{'pro':pro})
+
+def addtowish(request,id):
+    Product.objects.filter(id=id).update(status=1)
+    return redirect('wishlist')
+
+def removewish(request,id):
+    Product.objects.filter(id=id).update(status=2)
+    return redirect('wishlist')
+
 def viewmoreproducts(request,id):
     if 'u_id' in request.session:
         pro=Product.objects.filter(id=id)
@@ -223,6 +235,9 @@ def orders(request):
 def contact(request):
     return render(request,'contact.html')
 
+def feedbacksuccess(request):
+    return render(request,'feedbacksuccess.html')
+
 def contactdata(request):
     if request.method == 'POST':
         name=request.POST.get('name')
@@ -230,7 +245,7 @@ def contactdata(request):
         message=request.POST.get('message')
         data=Contact(name=name,email=email,message=message)
         data.save()
-        return redirect('contact')
+        return redirect('feedbacksuccess')
     
 def about(request):
     return render(request,'about.html')

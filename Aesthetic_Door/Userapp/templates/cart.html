@@ -1,5 +1,17 @@
 {% extends 'userindex.html' %}
 {% block body %}
+<div class="page-title light-background">
+  <div class="container">
+    <h1>Cart</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'userindex' %}">Home</a></li>
+        <li class="current">cart</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
 <table class="table">
     <thead>
       <tr>
