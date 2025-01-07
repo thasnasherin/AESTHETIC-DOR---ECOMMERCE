@@ -27,7 +27,11 @@
               <td> {{i.pname}} </td>
               <td> {{i.pcat}} </td>
               <td> {{i.pprice}} </td>
+              {% if i.pstock == 0 %}
+              <td style="color: red;"> Out of Stock &nbsp;&nbsp; <a href="{% url 'edit_products' id=i.id %}"><label class="badge badge-success">ADD</label></a></td>
+              {% else %}
               <td> {{i.pstock}} </td>
+              {% endif %}
               <td><a href="{% url 'edit_products' id=i.id %}"><label class="badge badge-success">EDIT</label></a></td>
               <td><a href="{% url 'delete_products' id=i.id %}"><label class="badge badge-danger">DELETE</label></a></td>
 

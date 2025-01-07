@@ -59,11 +59,17 @@
           <li><b>Product Price</b> {{i.pprice}}</li>
           <li><b>Product Stock</b> {{i.pstock}}</li>
           <div class="col-12">
-            <input type="number" name="quantity" id="quantity" value="1" min="1" max="100">
+            <input type="number" value="1" id="quantity" name="quantity" min="1" max="{{ i.pstock }}">
             <input type="hidden" name="price" id="price" value="{{i.pprice}}">
             <input type="number" name="total" id="total" value="{{i.pprice}}">
           </div><br>
+          {% if i.pstock == 0 %}
+          <h3 style="color: red;">
+            This Product is Out of Stock.....!!!
+          </h3>
+          {% else %}
           <li><button  type="submit" class="btn-visit align-self-start">Add to Cart</button></li>
+          {% endif %}
         </ul>
       </form>
       </div>
@@ -92,10 +98,11 @@
               <p>
                 {{i.pprice}} rs
               </p>
-              {% if i.pstock < 6  %}
+              {% if i.pstock < 6 and i.pstock != 0  %}
               <p style="color: red;">
                 Hurryy...only few stocks are remaining.....!!!
               </p>
+             
               {% endif %}
 
             

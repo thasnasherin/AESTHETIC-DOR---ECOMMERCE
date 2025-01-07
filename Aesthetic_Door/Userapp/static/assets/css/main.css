@@ -1494,7 +1494,7 @@ section,
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--accent-color);
+  /* background: var(--accent-color); */
   left: 0;
   bottom: 0;
 }

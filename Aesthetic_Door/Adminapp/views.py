@@ -36,12 +36,12 @@ def updatecat(request,id):
     if request.method == 'POST':
         cname=request.POST['cname']
         cdesc=request.POST['cdesc']
-        # try:
-        #     img_c = request.FILES['cimage']
-        #     fs = FileSystemStorage()
-        #     file = fs.save(img_c.name, img_c)
-        # except MultiValueDictKeyError:
-        #     file = Category.objects.get(id=id).cimage
+        try:
+            img_c = request.FILES['cimage']
+            fs = FileSystemStorage()
+            file = fs.save(img_c.name, img_c)
+        except MultiValueDictKeyError:
+            file = Category.objects.get(id=id).cimage
         Category.objects.filter(id=id).update(cname=cname, cdesc=cdesc, cimage=file)
     return redirect('view_aesthetic_categories')
 

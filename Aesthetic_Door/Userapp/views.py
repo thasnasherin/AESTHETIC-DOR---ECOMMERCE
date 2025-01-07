@@ -96,6 +96,11 @@ def cartdata(request,id):
         t=request.POST.get('total')
         data=Cart(userid=Register.objects.get(id=u),productid=Product.objects.get(id=id),quantity=q,total=t)
         data.save()
+        # Decrease product stock
+        product = data.productid
+        if product.pstock > 0:  # Ensure stock is available
+            product.pstock -= int(q)
+            product.save()
         return redirect('cart')
     
 def cartdelete(request,id):
