@@ -59,9 +59,10 @@
           <li><a href="{% url 'viewproducts' cat='all' %}">Products</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
           
-          <li ><a style="color: rgb(11, 240, 164);" href="">Welcome {{request.session.username_u}}</a></li>
+          <li ><a style="color: rgb(11, 240, 164);" >Welcome {{request.session.username_u}}</a></li>
 
           <li><a href="{% url 'userlogout' %}">Logout</a></li>
+          <li><a href="{% url 'wishlist' %}">My Wishlist</a></li>
           <li><a href="{% url 'orders' %}">My Orders</a></li>
           {% else %}
           <li><a href="{% url 'userindex' %}" class="active">Home</a></li>
